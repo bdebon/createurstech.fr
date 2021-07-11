@@ -19,14 +19,14 @@
 
   </div>
 
-  <div>
-    <label for="search">Recherche</label>
-  </div>
-
   <div class="search">
-    <img class="search-icon" src="assets/images/followers.svg" aria-hidden="true"/>
-    <input type="search" class="quicksearch" placeholder="Créateurs, créatrices, mot-clé.." name="search" id='search' />
-    <button class='button button_tags' onclick="shuffleCard()" >Aléatoire</button>
+    <h2>Recherche</h2>
+    <!-- <label for="search">Recherche</label> -->
+    <div class="search-bar">
+      <img class="search-icon" src="assets/images/followers.svg" aria-hidden="true"/>
+      <input type="search" class="quicksearch" placeholder="Créateurs, créatrices, mot-clé.." name="search" id='search' />
+    </div><br><br>
+    <button class='button button_tags is-checked' onclick="shuffleCard()" >Aléatoire</button>
   </div>
 
 
@@ -64,7 +64,7 @@
                 </p>
                 <footer class="SocialNetworks">
                   {% if  creators.twitter_account_name   != '' and creators.twitter_followers != '' %}
-                  <a class="CallToAction Network Network--twitter" rel="noopener" href='https://twitter.com/@{{ creators.screen_name| markdownify | strip_html}}' target="_blank">
+                  <a class="CallToAction Network Network--twitter" rel="noopener" href='https://twitter.com/@{{ creators.twitter_screen_name| markdownify | strip_html}}' target="_blank">
                     <i class="fab fa-twitter"></i>
                     <span class="ReaderOnly">twitter</span>
                     <span class="follower-counter" aria-hidden="true">{{ creators.twitter_followers }}</span>
